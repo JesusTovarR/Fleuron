@@ -21,11 +21,12 @@ hostname        = "FLEURON-WEB-SERV"
 # vhost configuration
 # other vhosts can be added by using the vhost facility inside the vm
 #$ sudo vhost -s vhost_hostname -d vhost_docroot
+
 vhost_s_public         = "api.fleuron.local"
 vhost_d_public         = "/var/www/Fleuron"
 
-#vhost_s_private         = "private.lebonsandwich.local"
-#vhost_d_private         = "/var/www/API_LBS/private"
+#vhost_s_private         = "private.fleuron.local"
+#vhost_d_private         = "/var/www/Fleuron/admin"
 
 # Set a local private network IP address.
 # Ise only a private IP
@@ -341,7 +342,7 @@ Vagrant.configure("2") do |config|
   # Add these to the same directory as the Vagrantfile.
   ##########
   config.vm.provision "public" ,type:"shell", inline: "sudo vhost -s #{vhost_s_public} -d #{vhost_d_public}"
-  #config.vm.provision "private", type:"shell", inline: "sudo vhost -s #{vhost_s_private} -d #{vhost_d_private}"
+  config.vm.provision "private", type:"shell", inline: "sudo vhost -s #{vhost_s_private} -d #{vhost_d_private}"
   #config.vm.provision "shell", path: "./scripts/local-init.sh"
 
 end
