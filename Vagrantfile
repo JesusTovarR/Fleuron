@@ -25,8 +25,8 @@ hostname        = "FLEURON-WEB-SERV"
 vhost_s_public         = "api.fleuron.local"
 vhost_d_public         = "/var/www/Fleuron"
 
-#vhost_s_private         = "private.fleuron.local"
-#vhost_d_private         = "/var/www/Fleuron/admin"
+vhost_s_private         = "private.fleuron.local"
+vhost_d_private         = "/var/www/Fleuron/admin"
 
 # Set a local private network IP address.
 # Ise only a private IP
